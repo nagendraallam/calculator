@@ -1,9 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
+import { clear } from "../Redux/Actions";
 
 const mapStateToProps = (state) => {
   return {
     data: state,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    clear: () => dispatch(clear()),
   };
 };
 
@@ -21,6 +27,30 @@ function Display(props) {
         textAlign: "right",
       }}
     >
+      <div
+        style={{
+          position: "fixed",
+          display: "flex",
+          alignItems: "center",
+          height: `${props.height ? props.height : "30vh"}`,
+        }}
+      >
+        <button
+          className="shrink"
+          style={{
+            marginLeft: "10px",
+            background: "transparent",
+            border: "none",
+            fontSize: "100px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            props.clear();
+          }}
+        >
+          X
+        </button>
+      </div>
       <h2
         style={{
           fontSize: `${props.height ? props.height / 0.8 : "5vh"}`,
@@ -33,7 +63,8 @@ function Display(props) {
       </h2>
       <h3
         style={{
-          fontSize: `${props.height ? props.height / 0.3 : "20vh"}`,
+          fontSize: `${props.height ? props.height / 0.8 : "10vh"}`,
+          marginRight: "20px",
           marginTop: "2vh",
         }}
       >
@@ -43,4 +74,4 @@ function Display(props) {
   );
 }
 
-export default connect(mapStateToProps)(Display);
+export default connect(mapStateToProps, mapDispatchToProps)(Display);

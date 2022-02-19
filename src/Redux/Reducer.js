@@ -9,7 +9,6 @@ const state = {
 };
 
 const Reducer = (_, action) => {
-  console.log(action);
   switch (action.type) {
     case "NUMBER":
       return {
@@ -23,6 +22,16 @@ const Reducer = (_, action) => {
         isNumberA: _.isNumberA ? true : false,
         sign: _.sign,
       };
+
+    case "CLEAR":
+      return {
+        answer: "",
+        sign: "",
+        numberA: "",
+        numberB: "",
+        isNumberA: true,
+      };
+
     case "calculate":
       return {
         ...state,

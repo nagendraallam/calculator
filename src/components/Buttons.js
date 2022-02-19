@@ -40,39 +40,43 @@ function Buttons(props) {
           width: `${props.width ? `${props.width / 2}vh` : "100px"}`,
         }}
         onClick={() => {
-          //switch between sign and number
-          if (props.text == "1") {
-            props.number(props.text);
-          } else if (props.text == "2") {
-            props.number(props.text);
-          } else if (props.text == "3") {
-            props.number(props.text);
-          } else if (props.text == "4") {
-            props.number(props.text);
-          } else if (props.text == "5") {
-            props.number(props.text);
-          } else if (props.text == "6") {
-            props.number(props.text);
-          } else if (props.text == "7") {
-            props.number(props.text);
-          } else if (props.text == "8") {
-            props.number(props.text);
-          } else if (props.text == "9") {
-            props.number(props.text);
-          } else if (props.text == "0") {
-            props.number(props.text);
-          } else if (props.text == ".") {
-            props.number(props.text);
-          } else if (props.text == "+") {
-            props.sign(props.text);
-          } else if (props.text == "-") {
-            props.sign(props.text);
-          } else if (props.text == "X") {
-            props.sign(props.text);
-          } else if (props.text == "/") {
-            props.sign(props.text);
-          } else if (props.text == "=") {
-            props.calculate();
+          if (props.counter.answer.length < 7) {
+            //switch between sign and number
+            if (props.text == "1") {
+              props.number(props.text);
+            } else if (props.text == "2") {
+              props.number(props.text);
+            } else if (props.text == "3") {
+              props.number(props.text);
+            } else if (props.text == "4") {
+              props.number(props.text);
+            } else if (props.text == "5") {
+              props.number(props.text);
+            } else if (props.text == "6") {
+              props.number(props.text);
+            } else if (props.text == "7") {
+              props.number(props.text);
+            } else if (props.text == "8") {
+              props.number(props.text);
+            } else if (props.text == "9") {
+              props.number(props.text);
+            } else if (props.text == "0") {
+              props.number(props.text);
+            } else if (props.text == ".") {
+              props.number(props.text);
+            } else if (props.text == "+") {
+              props.sign(props.text);
+            } else if (props.text == "-") {
+              props.sign(props.text);
+            } else if (props.text == "x") {
+              props.sign(props.text);
+            } else if (props.text == "/") {
+              props.sign(props.text);
+            } else if (props.text == "=") {
+              props.calculate();
+            }
+          } else {
+            window.alert("You can't enter more than 7 digits");
           }
         }}
       >

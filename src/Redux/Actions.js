@@ -9,3 +9,7 @@ export function sign(value) {
 export function number(value) {
   return { type: "NUMBER", value };
 }
+
+export function clear() {
+  return { type: "CLEAR" };
+}
