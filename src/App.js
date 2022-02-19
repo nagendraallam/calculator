@@ -8,7 +8,7 @@ function App() {
   const store = createStore(Reducer);
   return (
     <Provider store={store}>
-      <div style={{ backgroundColor: "black" }}>
+      <div style={{ backgroundColor: "#D3ECA7" }}>
         <Display />
         <Body />
       </div>

@@ -2,7 +2,7 @@ export const ButtonLayout = [
   "9",
   "8",
   "7",
-  "X",
+  "x",
   "6",
   "5",
   "4",

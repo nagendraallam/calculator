@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { calculate, number, sign } from "../Redux/Actions";
-
+import "../styles/buttons.css";
 const mapStateToProps = (state) => {
   return {
     counter: state,
@@ -17,16 +17,27 @@ const mapDispatchToProps = (dispatch) => {
 
 function Buttons(props) {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: `${props.height ? props.height + "vh" : "100px"}`,
+        width: `${props.width ? props.width + "vw" : "100px"}`,
+      }}
+    >
       <button
+        className="shrink"
         id={props.text}
         style={{
-          border: "none",
+          hover: "transform(scale(0.8))",
+          border: "2px solid black",
+          boxShadow: " 5px 10px #888888",
           backgroundColor: `${props.bg ? props.bg : "white"}`,
           fontSize: "3vw",
           cursor: "pointer",
-          height: `${props.height ? props.height : "100px"}`,
-          width: `${props.width ? props.width : "100px"}`,
+          height: `${props.height ? `${props.height / 2}vh` : "100px"}`,
+          width: `${props.width ? `${props.width / 2}vh` : "100px"}`,
         }}
         onClick={() => {
           //switch between sign and number

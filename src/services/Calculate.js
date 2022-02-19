@@ -4,7 +4,7 @@ function solve(sign, number, answer) {
     return (Number(answer) + Number(number)).toFixed(2);
   } else if (sign === "-") {
     return (Number(answer) - Number(number)).toFixed(2);
-  } else if (sign === "X") {
+  } else if (sign === "x") {
     return (Number(answer) * Number(number)).toFixed(2);
   } else if (sign === "/") {
     return (Number(answer) / Number(number)).toFixed(2);
