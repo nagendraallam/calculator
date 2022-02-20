@@ -1,0 +1,7 @@
+.rowDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: space-evenly;
+  justify-content: center;
+}

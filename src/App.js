@@ -3,13 +3,24 @@ import Display from "./components/Display";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Reducer from "./Redux/Reducer";
+import { useEffect, useState } from "react";
 
 function App() {
   const store = createStore(Reducer);
+  const [isLandscape, setIsLandscape] = useState();
+
+  useEffect(() => {
+    if (window.innerHeight > window.innerWidth) {
+      setIsLandscape(false);
+    } else {
+      setIsLandscape(true);
+    }
+  }, []);
+
   return (
     <Provider store={store}>
       <div style={{ backgroundColor: "#D3ECA7" }}>
-        <Display />
+        <Display landscape={isLandscape} />
         <Body />
       </div>
     </Provider>

@@ -22,7 +22,7 @@ function Buttons(props) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: `${props.height ? props.height + "vh" : "100px"}`,
+        height: `${props.height ? props.height + "px" : "100px"}`,
         width: `${props.width ? props.width + "vw" : "100px"}`,
       }}
     >
@@ -34,49 +34,21 @@ function Buttons(props) {
           border: "2px solid black",
           boxShadow: " 5px 10px #888888",
           backgroundColor: `${props.bg ? props.bg : "white"}`,
-          fontSize: "3vw",
+          fontSize: "3vh",
           cursor: "pointer",
-          height: `${props.height ? `${props.height / 2}vh` : "100px"}`,
+          height: `${props.height ? `${props.height / 2}px` : "100px"}`,
           width: `${props.width ? `${props.width / 2}vh` : "100px"}`,
         }}
         onClick={() => {
-          if (props.counter.answer.length < 7) {
-            //switch between sign and number
-            if (props.text == "1") {
-              props.number(props.text);
-            } else if (props.text == "2") {
-              props.number(props.text);
-            } else if (props.text == "3") {
-              props.number(props.text);
-            } else if (props.text == "4") {
-              props.number(props.text);
-            } else if (props.text == "5") {
-              props.number(props.text);
-            } else if (props.text == "6") {
-              props.number(props.text);
-            } else if (props.text == "7") {
-              props.number(props.text);
-            } else if (props.text == "8") {
-              props.number(props.text);
-            } else if (props.text == "9") {
-              props.number(props.text);
-            } else if (props.text == "0") {
-              props.number(props.text);
-            } else if (props.text == ".") {
-              props.number(props.text);
-            } else if (props.text == "+") {
-              props.sign(props.text);
-            } else if (props.text == "-") {
-              props.sign(props.text);
-            } else if (props.text == "x") {
-              props.sign(props.text);
-            } else if (props.text == "/") {
-              props.sign(props.text);
-            } else if (props.text == "=") {
+          //switch between sign and number
+          if (isNaN(Number(props.text)) && props.text !== ".") {
+            if (props.text === "=") {
               props.calculate();
+            } else {
+              props.sign(props.text);
             }
           } else {
-            window.alert("You can't enter more than 7 digits");
+            props.number(props.text);
           }
         }}
       >

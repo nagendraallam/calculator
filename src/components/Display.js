@@ -17,11 +17,6 @@ function Display(props) {
   return (
     <div
       style={{
-        boxSizing: "border-box",
-        border: "10px solid black",
-        borderRadius: "10px",
-        marginLeft: "10px",
-        marginRight: "10px",
         height: `${props.height ? props.height : "30vh"}`,
         backgroundColor: "#A1B57D",
         textAlign: "right",
@@ -41,8 +36,13 @@ function Display(props) {
             marginLeft: "10px",
             background: "transparent",
             border: "none",
-            fontSize: "100px",
+            fontSize: `${props.landscape ? "10vh" : "15px"}`,
             cursor: "pointer",
+            backgroundColor: "white",
+            border: "2px solid black",
+            borderRadius: `${props.landscape ? "50%" : "5px"}`,
+            height: `${props.landscape ? "20vh" : "10vh"}`,
+            width: `${props.landscape ? "20vh" : "5vh"}`,
           }}
           onClick={() => {
             props.clear();
