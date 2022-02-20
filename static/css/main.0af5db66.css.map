@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.0af5db66.css","mappings":"AAAA,QACE,uBACF,CAEA,2CAGE,2BAAqB,CAArB,mBACF","sources":["styles/buttons.css"],"sourcesContent":[".shrink {\r\n  transition-duration: 0.5s;\r\n}\r\n\r\n.shrink:hover,\r\n.shrink:focus,\r\n.shrink:active {\r\n  transform: scale(0.9);\r\n}\r\n"],"names":[],"sourceRoot":""}
