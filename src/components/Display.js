@@ -20,6 +20,10 @@ function Display(props) {
         height: `${props.height ? props.height : "30vh"}`,
         backgroundColor: "#A1B57D",
         textAlign: "right",
+        borderRadius: "10px",
+        marginLeft: "10px",
+        marginRight: "10px",
+        marginTop: "10px",
       }}
     >
       <div
@@ -36,13 +40,13 @@ function Display(props) {
             marginLeft: "10px",
             background: "transparent",
             border: "none",
-            fontSize: `${props.landscape ? "10vh" : "15px"}`,
+            fontSize: `${props.landscape ? "5vh" : "15px"}`,
             cursor: "pointer",
             backgroundColor: "white",
+            borderRadius: `${props.landscape ? "0px" : "15px"}`,
             border: "2px solid black",
-            borderRadius: `${props.landscape ? "50%" : "5px"}`,
-            height: `${props.landscape ? "20vh" : "10vh"}`,
-            width: `${props.landscape ? "20vh" : "5vh"}`,
+            height: `${props.landscape ? "10vh" : "5vh"}`,
+            width: `${props.landscape ? "10vh" : "5vh"}`,
           }}
           onClick={() => {
             props.clear();
@@ -58,8 +62,8 @@ function Display(props) {
         }}
       >
         {props.data.numberA + "  "}&nbsp;
-        {props.data.sign !== "" ? props.data.sign + "  " : ""}
-        {props.data.numberB !== "" ? props.data.numberB + "  " : ""}
+        {props.data.sign !== "" ? props.data.sign : ""}&nbsp;
+        {props.data.numberB !== "" ? props.data.numberB : ""}&nbsp;
       </h2>
       <h3
         style={{

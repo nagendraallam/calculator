@@ -30,14 +30,15 @@ function Buttons(props) {
         className="shrink"
         id={props.text}
         style={{
-          hover: "transform(scale(0.8))",
+          transitionDelay: "0.1s",
           border: "2px solid black",
           boxShadow: " 5px 10px #888888",
           backgroundColor: `${props.bg ? props.bg : "white"}`,
-          fontSize: "3vh",
+          fontSize: "5vh",
           cursor: "pointer",
-          height: `${props.height ? `${props.height / 2}px` : "100px"}`,
-          width: `${props.width ? `${props.width / 2}vh` : "100px"}`,
+          borderRadius: "15px",
+          height: `${props.height ? `${props.height * 0.9}px` : "100px"}`,
+          width: `${props.width ? `${props.width * 0.9}vw` : "100px"}`,
         }}
         onClick={() => {
           //switch between sign and number
