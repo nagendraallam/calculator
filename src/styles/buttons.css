@@ -5,5 +5,5 @@
 .shrink:hover,
 .shrink:focus,
 .shrink:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }

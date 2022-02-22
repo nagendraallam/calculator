@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div>
+      <div style={{ backgroundColor: "#D3ECA7" }}>
         <Display landscape={isLandscape} />
         <Body />
       </div>
