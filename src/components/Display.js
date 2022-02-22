@@ -17,20 +17,24 @@ function Display(props) {
   return (
     <div
       style={{
-        height: `${props.height ? props.height : "30vh"}`,
+        height: `${props.landscape ? "30vh" : "40vh"}`,
         backgroundColor: "#A1B57D",
         textAlign: "right",
         borderRadius: "10px",
         marginLeft: "10px",
         marginRight: "10px",
         marginTop: "10px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <div
         style={{
+          left: "0",
           position: "fixed",
           display: "flex",
-          alignItems: "center",
+          marginTop: `${props.landscape ? "0" : "30vh"}`,
+          marginLeft: "10px",
           height: `${props.height ? props.height : "30vh"}`,
         }}
       >
@@ -43,7 +47,7 @@ function Display(props) {
             fontSize: `${props.landscape ? "5vh" : "15px"}`,
             cursor: "pointer",
             backgroundColor: "white",
-            borderRadius: `${props.landscape ? "0px" : "15px"}`,
+            borderRadius: `${props.landscape ? "10px" : "15px"}`,
             border: "2px solid black",
             height: `${props.landscape ? "10vh" : "5vh"}`,
             width: `${props.landscape ? "10vh" : "5vh"}`,
@@ -59,6 +63,7 @@ function Display(props) {
         style={{
           fontSize: `${props.height ? props.height / 0.8 : "5vh"}`,
           margin: 0,
+          marginBottom: "auto",
         }}
       >
         {props.data.numberA + "  "}&nbsp;

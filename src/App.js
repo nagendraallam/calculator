@@ -21,7 +21,7 @@ function App() {
     <Provider store={store}>
       <div>
         <Display landscape={isLandscape} />
-        <Body />
+        <Body landscape={isLandscape} />
       </div>
     </Provider>
   );
