@@ -31,6 +31,26 @@ const Reducer = (_, action) => {
         numberB: "",
         isNumberA: true,
       };
+    case "DECIMAL":
+      if (_.isNumberA) {
+        if (_.numberA.includes(".")) {
+          return _;
+        }
+        return {
+          ..._,
+          answer: _.answer + ".",
+          numberA: _.numberA + ".",
+        };
+      } else {
+        if (_.numberB.includes(".")) {
+          return _;
+        }
+        return {
+          ..._,
+          answer: _.answer + ".",
+          numberB: _.numberB + ".",
+        };
+      }
 
     case "calculate":
       return {
@@ -39,13 +59,16 @@ const Reducer = (_, action) => {
       };
     case "SIGN":
       if (_.isNumberA) {
-        return {
-          ...state,
-          sign: action.value,
-          isNumberA: false,
-          numberA: _.answer,
-          answer: "",
-        };
+        if (_.numberA === "") {
+          return _;
+        } else
+          return {
+            ...state,
+            sign: action.value,
+            isNumberA: false,
+            numberA: _.answer,
+            answer: "",
+          };
       } else {
         return {
           ...state,

@@ -1,9 +1,9 @@
 .shrink {
-  transition-duration: 0.5s;
+  transition-duration: 0.1s;
 }
 
 .shrink:hover,
 .shrink:focus,
 .shrink:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }

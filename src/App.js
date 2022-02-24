@@ -21,7 +21,7 @@ function App() {
     <Provider store={store}>
       <div style={{ backgroundColor: "#D3ECA7" }}>
         <Display landscape={isLandscape} />
-        <Body />
+        <Body height={isLandscape ? 70 : 60} />
       </div>
     </Provider>
   );

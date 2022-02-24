@@ -17,9 +17,12 @@ function Display(props) {
   return (
     <div
       style={{
-        height: `${props.height ? props.height : "30vh"}`,
+        height: `${props.landscape ? "30vh" : "40vh"}`,
         backgroundColor: "#A1B57D",
+        display: "flex",
         textAlign: "right",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
       <div
@@ -27,6 +30,7 @@ function Display(props) {
           position: "fixed",
           display: "flex",
           alignItems: "center",
+
           height: `${props.height ? props.height : "30vh"}`,
         }}
       >
@@ -41,7 +45,7 @@ function Display(props) {
             backgroundColor: "white",
             border: "2px solid black",
             borderRadius: `${props.landscape ? "50%" : "5px"}`,
-            height: `${props.landscape ? "20vh" : "10vh"}`,
+            height: `${props.landscape ? "20vh" : "5vh"}`,
             width: `${props.landscape ? "20vh" : "5vh"}`,
           }}
           onClick={() => {
@@ -54,7 +58,6 @@ function Display(props) {
       <h2
         style={{
           fontSize: `${props.height ? props.height / 0.8 : "5vh"}`,
-          margin: 0,
         }}
       >
         {props.data.numberA + "  "}&nbsp;
@@ -64,8 +67,7 @@ function Display(props) {
       <h3
         style={{
           fontSize: `${props.height ? props.height / 0.8 : "10vh"}`,
-          marginRight: "20px",
-          marginTop: "2vh",
+          marginBottom: "5vh",
         }}
       >
         {props.data.answer}

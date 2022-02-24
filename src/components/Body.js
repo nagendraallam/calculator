@@ -3,10 +3,10 @@ import { ButtonLayout } from "../configs";
 import "../styles/div.css";
 import Buttons from "./Buttons";
 
-export default function Body() {
-  const [height, setHeight] = React.useState(window.innerHeight * 0.7);
+export default function Body(props) {
+  console.log(props);
   return (
-    <div style={{ width: "100vw" }}>
+    <div style={{ width: "100vw", height: `${props.height}` }}>
       {ButtonLayout.map((_, index) => {
         if (index % 4 === 0) {
           return (
@@ -14,7 +14,7 @@ export default function Body() {
               {[1, 2, 3, 4].map((_, i) => {
                 return (
                   <Buttons
-                    height={height / 4}
+                    height={props.height / 4}
                     width={25}
                     text={ButtonLayout[index + i]}
                   />

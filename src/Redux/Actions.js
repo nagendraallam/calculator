@@ -13,3 +13,7 @@ export function number(value) {
 export function clear() {
   return { type: "CLEAR" };
 }
+
+export function decimal() {
+  return { type: "DECIMAL" };
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { calculate, number, sign } from "../Redux/Actions";
+import { calculate, decimal, number, sign } from "../Redux/Actions";
 import "../styles/buttons.css";
 const mapStateToProps = (state) => {
   return {
@@ -12,6 +12,7 @@ const mapDispatchToProps = (dispatch) => {
     sign: (value) => dispatch(sign(value)),
     number: (value) => dispatch(number(value)),
     calculate: () => dispatch(calculate()),
+    decimal: (value) => dispatch(decimal(value)),
   };
 };
 
@@ -22,7 +23,7 @@ function Buttons(props) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: `${props.height ? props.height + "px" : "100px"}`,
+        height: `${props.height ? props.height + "vh" : "100px"}`,
         width: `${props.width ? props.width + "vw" : "100px"}`,
       }}
     >
@@ -32,12 +33,13 @@ function Buttons(props) {
         style={{
           hover: "transform(scale(0.8))",
           border: "2px solid black",
+          borderRadius: "5px",
           boxShadow: " 5px 10px #888888",
           backgroundColor: `${props.bg ? props.bg : "white"}`,
           fontSize: "3vh",
           cursor: "pointer",
-          height: `${props.height ? `${props.height / 2}px` : "100px"}`,
-          width: `${props.width ? `${props.width / 2}vh` : "100px"}`,
+          height: `${props.height ? `${props.height * 0.8}vh` : "100px"}`,
+          width: `${props.width ? `${props.width * 0.8}vw` : "100px"}`,
         }}
         onClick={() => {
           //switch between sign and number
@@ -48,7 +50,8 @@ function Buttons(props) {
               props.sign(props.text);
             }
           } else {
-            props.number(props.text);
+            if (props.text === ".") props.decimal(props.text);
+            else props.number(props.text);
           }
         }}
       >
