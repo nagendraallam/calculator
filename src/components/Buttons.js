@@ -36,7 +36,7 @@ function Buttons(props) {
           borderRadius: "5px",
           boxShadow: " 5px 10px #888888",
           backgroundColor: `${props.bg ? props.bg : "white"}`,
-          fontSize: "3vh",
+          fontSize: "2em",
           cursor: "pointer",
           height: `${props.height ? `${props.height * 0.8}vh` : "100px"}`,
           width: `${props.width ? `${props.width * 0.8}vw` : "100px"}`,
